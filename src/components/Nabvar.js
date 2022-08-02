@@ -1,14 +1,16 @@
+/* eslint-disable react/jsx-no-undef */
 import React, { useState } from "react";
-
-import styles from "./Header.module.scss";
+import {  NavLink } from 'react-router-dom';
+import styles
+ from "./Nabvar.module.scss";
 
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { FcAbout} from "react-icons/fc";
 import { FcSettings} from "react-icons/fc";
-import {FcServices } from "react-icons/fc";
+import {FaBloggerB } from "react-icons/fa";
 
-const Header = () => {
+const Nabvar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuToggler = () => setMenuOpen((p) => !p);
 
@@ -20,23 +22,25 @@ const Header = () => {
                 </div>
                 <div>
                     <nav className={`${styles.nav} ${menuOpen ? styles[`nav--open`] : {}}`}>
-                        <a className={styles.nav__item} href={"/"}>
+                        <NavLink to={"./about"} className={styles.nav__item} >
                       
-                            <h3>  <FcAbout/>  About</h3> 
-                        </a>
-                        <a className={styles.nav__item} href={"/"}>
+                            <h4>  About  <FcAbout/> </h4> 
+                        </NavLink>
+                        <NavLink to={"./api"} className={styles.nav__item} >
                       
-                        <h3>   CatApi  <FcSettings /> </h3>
+                        <h4>   CategoriasApp  <FcSettings /> </h4>
                       
-                        </a>
-                        <a className={styles.nav__item} href={"/"}>
-                            Blog  <FcServices />
-                        </a>
+                        </NavLink>
+                       
+                        <NavLink  to={"/blog"}className={styles.nav__item} >
+                        <h4>    Blog  <FaBloggerB/> </h4> 
+                        </NavLink>
                         <div className={styles.nav__button__container}>
                             <Button />
                         </div>
                     </nav>
                 </div>
+                
                 <div>
                     <div className={styles.header__button__container}>
                         <Button />
@@ -54,4 +58,8 @@ const Button = () => {
     return <button className={styles.button}>Click me</button>;
 };
 
-export default Header;
+export default Nabvar;
+
+
+
+

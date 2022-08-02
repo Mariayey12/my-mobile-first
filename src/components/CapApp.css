@@ -1,0 +1,47 @@
+.App {
+    text-align: center;
+    
+    
+  }
+  
+ 
+  
+  .App  {
+
+
+    background-color: #20d6be;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    
+  }
+  
+  body {
+    font-family: arial;
+    border: radius 30px;
+     height: 200vh;
+}
+   .image {
+    
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+margin:30px;
+    border-radius: 30px;
+  } 
+  
+  @keyframes App{
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
